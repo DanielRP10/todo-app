@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; margin: 0; background: #f6f8fb; color: #111; }
+.container { max-width: 920px; margin: 24px auto; padding: 0 16px; }
+h1 { margin: 8px 0 16px; }
+.new-task form { display: grid; grid-template-columns: 1fr 1fr auto; gap: 8px; }
+.new-task input, .new-task button { padding: 10px; border: 1px solid #ddd; border-radius: 8px; }
+.new-task button { cursor: pointer; border: none; background: #0d6efd; color: #fff; }
+
+.table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e6e8eb; border-radius: 10px; overflow: hidden; }
+.table th, .table td { padding: 10px; border-bottom: 1px solid #eef0f3; text-align: left; }
+.table tr:last-child td { border-bottom: none; }
+
+.badge { display:inline-block; padding: 4px 8px; border-radius: 999px; font-size: 12px; border:1px solid #dee1e6; }
+.badge.done { background: #e7f7ee; color: #0a7a3b; border-color:#c8edd9; }
+.badge.todo { background: #fff7e6; color: #b36b00; border-color:#ffe2b3; }
+
+.actions { display:flex; gap:8px; }
+.actions button { padding:6px 10px; border-radius: 8px; border:1px solid #dee1e6; background:#fff; cursor:pointer; }
+.actions button:hover { background:#f1f3f6; }
+.tr-done { opacity: 0.6; text-decoration: line-through; }
