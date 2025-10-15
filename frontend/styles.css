@@ -150,3 +150,14 @@ footer {
   color: #6c757d;
 }
 
+/* === MODO EDICION === */
+.editing input {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #cfd3da;
+  border-radius: 6px;
+}
+
+.editing td {
+  background: #f9fbfd;
+}
