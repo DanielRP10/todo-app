@@ -1,4 +1,4 @@
-# 🧩 TODO App - Sistema de Gestión de Tareas
+# TODO App - Sistema de Gestión de Tareas
 
 ## Descripción
 Aplicación de gestión de tareas desarrollada en **Node.js (backend)** y **HTML, CSS, JavaScript (frontend)**. Permite crear, listar, actualizar y eliminar tareas desde una interfaz web sencilla. La persistencia de datos se realiza en **PostgreSQL**, y todo el sistema está **contenedorizado con Docker** y **orquestado mediante Docker Compose** para garantizar portabilidad y ejecución en cualquier entorno.
@@ -31,12 +31,17 @@ El sistema se compone de tres servicios: **Frontend (Nginx)** que sirve la inter
 ## Instalación y Ejecución
 ### 1. Clonar repositorio
 git clone https://github.com/DanielRP10/todo-app.git
+
 cd todo-app
+
 ### 2. Levantar servicios
 docker compose build --no-cache
+
 docker compose up -d
+
 ### 3. Acceder a la aplicación
 Frontend: http://localhost:8080 
+
 Backend: http://localhost:3000 
 
 ## Comandos Útiles
