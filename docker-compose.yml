@@ -1,0 +1,55 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: todo-db
+    environment:
+      POSTGRES_USER: todo
+      POSTGRES_PASSWORD: todo
+      POSTGRES_DB: todoapp
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - todo-net
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: todo-api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      PORT: 3000
+      DB_HOST: db
+      DB_USER: todo
+      DB_PASSWORD: todo
+      DB_NAME: todoapp
+      DB_PORT: 5432
+    networks:
+      - todo-net
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: todo-web
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - todo-net
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+
+networks:
+  todo-net:
